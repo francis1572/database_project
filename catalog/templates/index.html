@@ -1,0 +1,17 @@
+
+
+{% extends "base_generic.html" %}
+
+{% block content %}
+<h1>Food Delivery</h1>
+
+  <p>Welcome to <em>Food Delivery</em>. This is a flatform for you to order hundreds of gourmet, and we promise to delivery on time. You don't need to register before ordering, all people are welcome to order gourmet in our Web. But you need to pay on delivery. </p>
+
+<h2>Recent News:</h2>
+
+  <p>We have the fllowing number of food now!</p>
+  <ul>
+    <li><strong>Foods:</strong> {{ num_food }}</li>
+  </ul>
+
+{% endblock %}

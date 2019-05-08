@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>My Ordered Foods</h1>
+
+    {% if myOrder_list %}
+    <ul>
+
+      {% for foodinst in myOrder_list %} 
+      <li>
+        <p>{{foodinst.orderID}}</p>
+        <p>{{foodinst.foodID.pk}}</p>
+      </li>>
+      {% endfor %}
+    </ul>
+
+    {% else %}
+      <p>There are no foods ordered.</p>
+    {% endif %}       
+{% endblock %}

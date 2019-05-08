@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <h1>Food Evaluation</h1>
+
+    {% if AAA %}
+    <ul>
+
+      {% for grade in AAA %}
+      <li>
+        <p>         the evaluated Food: {{ grade.foodID}} </p>
+        <p>         grade:              star ({{grade.grade}}) </p>
+        <!--<p>         date of evaluation: {{ grade.orderDate}} </p>-->
+        <p>         by:                 {{ grade.userID}} </p>
+      </li>
+      {% endfor %}
+
+    </ul>
+
+    {% else %}
+      <p>There are no food evaluated now.</p>
+    {% endif %}       
+{% endblock %}

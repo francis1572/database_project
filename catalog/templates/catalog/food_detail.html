@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+<h1>More Detail about {{ food.foodName }} :</h1>
+
+<p><strong>Food Name:</strong> {{ food.foodName }}</p>
+<p><strong>Food Price: $</strong> {{ food.price }}</p> 
+<p><strong>Food Type:</strong> {{ food.typeID }}</p> 
+<p><strong>Food Feature: </strong> {{ food.featID.FoodFeat}}
+<div style="margin-left:20px;margin-top:20px">
+
+</div>
+{% endblock %}

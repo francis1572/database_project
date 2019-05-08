@@ -1,0 +1,23 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <div style="width:400px; height:500px; overflow: scroll;">
+    <h1>Food List</h1>
+
+    {% if food_list %}
+    <ul>
+
+      {% for food in food_list %}
+      <li>
+        <a href="{{food.pk}}">{{ food.foodName }}</a>     
+        <p>         price:  ${{food.price}} </p>
+        <p>         Food Type: {{ food.typeID}} </p>
+      </li>
+      {% endfor %}
+
+    </ul>
+    </div>
+    {% else %}
+      <p>There are no foods now.</p>
+    {% endif %}       
+{% endblock %}

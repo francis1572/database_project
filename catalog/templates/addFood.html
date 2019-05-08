@@ -1,0 +1,30 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <form action="" method="post">
+      <table>
+        <tr>
+          <td> <label for="foodName">food name:</label> </td>
+          <td> <input id="foodName" type="text" name="foodName" style="background-color: black"> </td>
+        </tr>
+        <tr>
+          <td> <label for="price">price:</label> </td>
+          <td> <input id="price" type="text" name="price" style="background-color: black"> </td>
+        </tr>
+        <tr>
+          <td> <label for="FoodType">food type:</label> </td>
+          <td> 
+            <input id="FoodType" type="text" name="FoodType" style="background-color: black"></input>
+          </td>
+        </tr>
+        <tr>
+          <td> <label for="FoodFeature">food feature:</label> </td>
+          <td> 
+            <input id="FoodFeature" type="text" name="FoodFeature" style="background-color: black"></input>
+          </td>
+        </tr>
+      </table>
+<!--       <input type="hidden" name="ok" value="yes"> -->
+      <input type="submit" name="ok" value="加入食物" style="background-color:black;">
+    </form>
+{% endblock %}

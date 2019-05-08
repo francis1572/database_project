@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <form action="" method="post">
+      <table>
+        <tr>
+          <td> <label for="userID">user name:</label> </td>
+          <td> <input id="userID" type="text" name="userID" style="background-color: black"> </td>
+        </tr>
+        <tr>
+          <td> <label for="password">password:</label> </td>
+          <td> <input id="password" type="text" name="password" style="background-color: black"> </td>
+        </tr>
+      </table>
+<!--       <input type="hidden" name="ok" value="yes"> -->
+      <input type="submit" name="ok" value="註冊" style="background-color:black;">
+    </form>
+{% endblock %}

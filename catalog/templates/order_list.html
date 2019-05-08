@@ -1,0 +1,22 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+    <form action="" method="post">
+      <table>
+        <tr>
+          <td> <label for="userID">user name:</label> </td>
+          <td> <input id="userID" type="text" name="userID" style="background-color: black"> </td>
+        </tr>
+        <tr>
+          <td> <label for="foodID">food name:</label> </td>
+          <td> <input id="foodID" type="text" name="foodID" style="background-color: black"> </td>
+        </tr>
+        <tr>
+          <td> <label for="orderDate">order date:</label> </td>
+          <td> <input id="orderDate" type="text" name="orderDate" style="background-color: black"> </td>
+        </tr>
+      </table>
+<!--       <input type="hidden" name="ok" value="yes"> -->
+      <input type="submit" name="ok" value="送出訂單" style="background-color:black;">
+    </form>
+{% endblock %}

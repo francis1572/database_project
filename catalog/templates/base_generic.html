@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  {% block title %}<title>Food Delivery</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <!-- Add additional CSS in static file -->
+  {% load static %}
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<style>
+body,h1,h5 {font-family: "Raleway", sans-serif}
+body, html {height: 100%}
+.bgimg {
+  background-image: url('/../static/images/background.jpg');
+  min-height: 100%;
+  background-position: center;
+  background-size: cover;
+}
+</style>
+
+<script language="javascript">
+  var t = null;
+  t = setTimeout(time,1000);
+  function time()
+  {
+    clearTimeout(t);
+    dt = new Date();
+    var y=dt.getYear()+1900;
+    var mm=dt.getMonth()+1;
+    var d=dt.getDate();
+    var weekday=["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    var day=dt.getDay();
+    document.getElementById("timeShow").innerHTML =  y+"/"+mm+"/"+d+"/"+weekday[day];
+    t = setTimeout(time,1000); 
+  }
+</script>
+
+<body>
+
+<div class="bgimg w3-display-container w3-text-white">
+  <div class="w3-display-middle w3-large">
+    {% block content %}{% endblock %}
+  </div>
+  <div class = "w3-jumbo">
+    <p> Food Delivery </p>
+  </div>
+  <div class="row">
+    <div class="col-sm-2">
+      {% block sidebar %}
+      <ul class="sidebar-nav">
+        <p><a href = "{% url 'index' %}" class="w3-button w3-black">Home</button></a></p>
+        <p><a href = "{% url 'food' %}" class="w3-button w3-black">Food</button></a></p>
+        <p><a href = "{% url 'foodType' %}" class="w3-button w3-black">Food Type</button></a></p>
+        <p><a href = "{% url 'material' %}" class="w3-button w3-black">Food Material</button></a></p>
+        <p><a href = "{% url 'AAA' %}" class="w3-button w3-black">view Evaluation</button></a></p>
+        <p><a href = "/catalog/evaluation/" class="w3-button w3-black">Evaluation</button></a></p>
+        <p><a href = "/catalog/order/" class="w3-button w3-black">Order</button></a></p>
+        <p><a href = "/catalog/register/" class="w3-button w3-black">Register</button></a></p>
+
+        
+      </ul>
+      <ul class="sidebar-nav">
+        {% if request.user.is_authenticated %}
+        <p>User: {{ request.user }}</p>
+        <p><a href="{% url 'logout'%}?next={{request.path}}" class="w3-button w3-black">Logout</button></a></p>   
+        {% if perms.catalog.can_add_food %}
+        <p><a href = "/catalog/addFood/" class="w3-button w3-black">addFood</button></a></p>
+        {% endif %}
+        {% else %}
+        <p><a href="{% url 'login'%}?next={{request.path}}" class="w3-button w3-black">Login</button></a></p> 
+        {% endif %} 
+      </ul>
+      {% endblock %} 
+    </div>
+  </div>
+
+  <div class="w3-display-bottomleft w3-container">
+    <div id = "timeShow"></div>
+    <p class="w3-large">NTU IM</p>
+
+  </div>
+</div>
+
+  
+</body>
+</html>
+
+
+
